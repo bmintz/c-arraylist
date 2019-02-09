@@ -21,8 +21,8 @@ void arraylist_del(arraylist_t *l, unsigned int i) {
 	if (i >= l->length) {
 		return;}
 
-	l->data[i] = NULL;
 	free(l->data[i]);
+	l->data[i] = NULL;
 	l->length--;
 
 	for (unsigned int idx = i; idx < l->length; idx++) {
