@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "arraylist.h"
 
@@ -11,7 +12,7 @@ void arraylist_append(arraylist_t *l, void *val) {
 	if (l->length >= l->capacity) {
 		unsigned int new_capacity = l->capacity * 2;
 		l->capacity = new_capacity;
-		l->data = realloc(l->data, new_capacity);}
+		l->data = realloc(l->data, new_capacity * sizeof(void *));}
 
 	l->data[l->length] = val;
 	l->length++;
