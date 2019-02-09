@@ -6,3 +6,5 @@ a quux
 p
 d 1
 p
+d 2
+p
