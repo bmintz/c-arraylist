@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "arraylist.h"
 
@@ -17,6 +16,16 @@ void arraylist_append(arraylist_t *l, void *val) {
 	l->data[l->length] = val;
 	l->length++;
 	return;}
+
+void arraylist_del(arraylist_t *l, unsigned int i) {
+	if (i >= l->length) {
+		return;}
+
+	l->data[i] = NULL;
+	free(l->data[i]);
+
+	for (unsigned int idx = i; idx < l->length - 1; idx++) {
+		l->data[idx] = l->data[idx + 1];}}
 
 void arraylist_iter(arraylist_t *l, void *context, int (*f)(void *context, void *val)) {
 	for (unsigned int i = 0; i < l->length; i++) {

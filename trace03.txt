@@ -1,0 +1,8 @@
+3
+a foo
+a bar
+a baz
+a quux
+p
+d 1
+p

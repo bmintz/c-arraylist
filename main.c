@@ -29,11 +29,11 @@ void eval_tracefile(char *filename) {
 			printf("Appending %s to the arraylist\n", val);
 			arraylist_append(l, val);
 			break;
-/*		case 'd':
+		case 'd':
 			fscanf(infile, "%u", &i);
 			printf("Deleting l[%u]\n", i);
 			arraylist_del(l, i);
-			break; */
+			break;
 		case 'p':
 			printf("Printing all values\n");
 			arraylist_iter(l, NULL, print_iter);
