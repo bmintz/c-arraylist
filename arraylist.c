@@ -5,7 +5,7 @@ arraylist_t *arraylist_new(unsigned int initial_capacity) {
 	arraylist_t *l = malloc(sizeof(arraylist_t *));
 	l->capacity = initial_capacity;
 	l->length = 0;
-	l->data = calloc(sizeof(void *), initial_capacity);}
+	l->data = calloc(initial_capacity, sizeof(void *));}
 
 void arraylist_append(arraylist_t *l, void *val) {
 	if (l->length >= l->capacity) {
@@ -22,11 +22,11 @@ void arraylist_del(arraylist_t *l, unsigned int i) {
 		return;}
 
 	free(l->data[i]);
-	l->data[i] = NULL;
-	l->length--;
 
-	for (unsigned int idx = i; idx < l->length; idx++) {
-		l->data[idx] = l->data[idx + 1];}}
+	for (unsigned int idx = i; idx < l->length - 1; idx++) {
+		l->data[idx] = l->data[idx + 1];}
+
+	l->length--;}
 
 void arraylist_iter(arraylist_t *l, void *context, int (*f)(void *context, void *val)) {
 	for (unsigned int i = 0; i < l->length; i++) {
