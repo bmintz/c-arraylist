@@ -5,7 +5,9 @@ arraylist_t *arraylist_new(unsigned int initial_capacity) {
 	arraylist_t *l = malloc(sizeof(arraylist_t));
 	l->capacity = initial_capacity;
 	l->length = 0;
-	l->data = calloc(initial_capacity, sizeof(void *));}
+	l->data = calloc(initial_capacity, sizeof(void *));
+
+	return l;}
 
 void arraylist_append(arraylist_t *l, void *val) {
 	if (l->length >= l->capacity) {

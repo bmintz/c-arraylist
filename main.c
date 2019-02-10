@@ -11,7 +11,6 @@ void eval_tracefile(char *filename) {
 	FILE *infile;
 	unsigned int list_capacity, i;
 	char buf[80], *val;
-	arraylist_t *l;
 
 	if ((infile = fopen(filename, "r")) == NULL) {
 		printf("Error opening tracefile %s\n", filename);
@@ -19,7 +18,7 @@ void eval_tracefile(char *filename) {
 
 	fscanf(infile, "%u", &list_capacity);
 	printf("Creating arraylist of capacity %u\n", list_capacity);
-	l = arraylist_new(list_capacity);
+	arraylist_t *l = arraylist_new(list_capacity);
 
 	while (fscanf(infile, "%s", buf) != EOF) {
 		switch(buf[0]) {
