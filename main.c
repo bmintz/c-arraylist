@@ -38,12 +38,11 @@ void eval_tracefile(char *filename) {
 			printf("Printing all values\n");
 			arraylist_iter(l, NULL, print_iter);
 			break;
-		case 'f':
-			arraylist_free(l);
-			exit(0);
 		default:
 			printf("Bad tracefile directive (%c)", buf[0]);
 			exit(1);}}
+
+	arraylist_free(l);
 	fclose(infile);}
 
 int main(int argc, char *argv[]) {

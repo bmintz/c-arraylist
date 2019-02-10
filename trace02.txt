@@ -4,4 +4,3 @@ a bar
 a baz
 a quux
 p
-f

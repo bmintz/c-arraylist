@@ -5,4 +5,3 @@ a baz
 a quux
 a garpley
 p
-f
