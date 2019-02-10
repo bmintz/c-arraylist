@@ -2,7 +2,7 @@
 #include "arraylist.h"
 
 arraylist_t *arraylist_new(unsigned int initial_capacity) {
-	arraylist_t *l = malloc(sizeof(arraylist_t *));
+	arraylist_t *l = malloc(sizeof(arraylist_t));
 	l->capacity = initial_capacity;
 	l->length = 0;
 	l->data = calloc(initial_capacity, sizeof(void *));}
